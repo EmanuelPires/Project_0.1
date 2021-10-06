@@ -1,6 +1,14 @@
 package Models;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
+	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private String firstName;
 	private String lastName;
@@ -17,6 +25,12 @@ public class Customer {
 		this.password = password;
 	}
 	
+	public Customer() {
+		super();
+	}
+	
+	
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -40,6 +54,12 @@ public class Customer {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	@Override
+	public String toString() {
+		return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", userName=" + userName + ", password="
+				+ password + "]";
 	}
 	
 
