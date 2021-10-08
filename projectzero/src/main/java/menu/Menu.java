@@ -7,7 +7,7 @@ import services.CustomerService;
 
 public class Menu {
 	
-	private static CustomerService cusServ = new CustomerService("customerList.txt");
+	//private static CustomerService cusServ = new CustomerService());
 	
 	public void runMenu() {
 		System.out.println("Welcome to the Bank App");
@@ -34,8 +34,8 @@ public class Menu {
 			System.out.println("Enter your password");
 			String password = in.nextLine();
 			
-		cus = cusServ.signUp(firstName, lastName, userName, password);
-		cus.toString();
+	
+	
 		
 		break;
 		
