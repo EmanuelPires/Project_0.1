@@ -9,14 +9,13 @@ import menu.Menu;
 import services.CustomerService;
 
 public class BankDriver {
-	private static CustomerDao cusDao = new CustomerDaoDB();
-	private static CustomerService cusServ = new CustomerService(cusDao);
+	
 	
 	
 	
 	public static void main(String[] args) {
 		
-	 System.out.println( cusDao.getAllCustomers())	;
+	 //System.out.println( cusDao.getAllCustomers())	;
 		
 		//System.out.println(cusList);
 		Menu men = new Menu();

@@ -40,8 +40,7 @@ public class ConnectionUtil {
 			username = (String)prop.getProperty("username");
 			password = (String)prop.getProperty("password");
 			
-			System.out.println(username);
-			System.out.println(password);
+		
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
