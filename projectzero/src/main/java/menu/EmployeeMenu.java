@@ -26,6 +26,7 @@ public class EmployeeMenu {
 		System.out.println("What would you like to do?");
 		System.out.println("1 Approve Accounts");
 		System.out.println("2 Access Account");
+		System.out.println("3 Exit");
 		
 		String res= in.nextLine();
         switch(res) {
@@ -48,14 +49,23 @@ public class EmployeeMenu {
         			System.out.println("Thank you this account is approved");
         			empDao.approvingAccounts(curCust);
         			
-        		}else if(verdict.equals("N")) {
-        			System.out.println("Account remains the same");
-        		}else if (verdict.equals("Cancel")) {
+        		}else if(verdict.equals("Cancel")) {
         			Menu men = new Menu();
         			men.runMenu();
+        		}else if (verdict.equals("N")) {
+        			continue;
         		}
         	}
         	
+        	System.out.println("No more accounts to approve");
+        	EmployeeMenu.EmpMenu1(e);
+        	
+        case "2":
+        	System.out.println("Lets get accounts");
+        case "3":
+        	System.out.println("Goodbye");
+        	Menu men = new Menu();
+        	men.runMenu();
         }
 
 	}

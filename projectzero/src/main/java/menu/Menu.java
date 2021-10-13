@@ -5,6 +5,7 @@ import java.util.Scanner;
 import Models.Customer;
 import dao.CustomerDao;
 import dao.CustomerDaoDB;
+import exceptions.UserDoesNotExist;
 import services.CustomerService;
 
 public class Menu {
@@ -50,10 +51,12 @@ public class Menu {
 			String username = in.nextLine();
 			System.out.println("Enter your Password");
 		    password = in.nextLine();
-		    
+		    try {
 		    cus= cusServ.signIn(username, password);
-		    
-		   
+		    }catch(UserDoesNotExist e)
+		    {
+		    	e.printStackTrace();
+		    }
 		   
 		   if(cus.getUser_type().equals("customer")) {
 			   
@@ -61,7 +64,9 @@ public class Menu {
 		   }else if(cus.getUser_type().equals("employee")) {
 			   //System.out.println("We made it to the employee menu");
 			   EmployeeMenu.EmpMenu1(cus);
-		   }
+		   }else if (cus.getUser_type().equals("administrator")) {
+			  AdministratorMenu.adminMenu(cus);
+		   };
 		   
 		   
 		     

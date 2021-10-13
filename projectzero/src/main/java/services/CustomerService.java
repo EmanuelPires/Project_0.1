@@ -29,12 +29,15 @@ public class CustomerService {
 		Customer c = cusDao.getCustomerByUsername(username);
 	//System.out.println(c.toString());
 		if(c.getId()==0) {
+			Logging.logger.warn("Username does not exist");
 			throw new UserDoesNotExist();
 		}else if(c.getPassword().equals(password)){
 			
 			return c;
 		}
-		
+		System.out.println("Your Password is Incorrect!");
+		Menu men = new Menu();
+		men.runMenu();
 		return null;
 		
 	}
